@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Anniversary 💖</title>
+
+    <!-- Tambahkan Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            position: relative;
+            padding: 60px 20px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3em;
+            color: #ff66cc;
+            text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff3399;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 20px auto;
+            max-width: 600px;
+            text-shadow: 0 0 5px #ff99cc;
+        }
+        
+        button {
+            background-color: #ff66cc;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 0 10px #ff66cc, 0 0 20px #ff3399;
+        }
+        
+        button:hover {
+            background-color: #ff3399;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .photo-left,
+        .photo-right {
+            position: fixed;
+            top: 20px;
+            width: 200px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .photo-left {
+            left: 40px;
+        }
+        
+        .photo-right {
+            right: 40px;
+            animation: float-smooth 4s ease-in-out infinite;
+        }
+        
+        .string {
+            width: 2px;
+            height: 40px;
+            background-color: #fff;
+            margin: 0 auto 5px auto;
+        }
+        
+        .photo-left img,
+        .photo-right img,
+        #extraImage {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+        }
+        
+        .love {
+            position: absolute;
+            color: pink;
+            font-size: 2em;
+            animation: float 4s infinite ease-in;
+        }
+        
+        @keyframes float {
+            0% {
+                top: 100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 0%;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float-smooth {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .flower-emoji {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 60px;
+            transform: translate(-50%, -50%);
+            animation: glow 2s infinite ease-in-out;
+            opacity: 0.8;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .flower-corner {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 40px;
+            z-index: 10;
+            animation: pulse 3s infinite;
+        }
+        
+        #extraImage {
+            display: none;
+            margin: 30px auto 0;
+            max-width: 80%;
+        }
+        
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 5px #ff99cc);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 20px #ff66cc);
+                transform: translate(-50%, -50%) scale(1.15);
+            }
+            100% {
+                filter: drop-shadow(0 0 5px #ff99cc);
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .photo-left,
+            .photo-right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flower-emoji">🌸</div>
+    <div class="flower-corner">🌸</div>
+
+    <div class="container">
+        <h1>💖 Happy Anniversary SAYANGKU 💖</h1>
+        <p id="message1" class="hidden">HAPPY Anniversary SAYANGKU CINTAKU</p>
+        <p id="message2" class="hidden">Makasih ya udah tahan sama aku yang banyak minesnya</p>
+        <p id="message3" class="hidden">Semoga kita langgeng kayak sinetron yang gak tamat-tamat 📺</p>
+        <p id="message4" class="hidden">maaf ya aku banyak kurangnya beda sm cowok" lain tapi aku berusaha kok untuk menjadi terbaik buat kamu</p>
+        <p id="message5" class="hidden">Gak nyangka yah kita bisa sampe sejauh ini yah km walau km banyak nangisnya gara" aku maaf yah</p>
+        <p id="message6" class="hidden">Semoga kita terus bareng yah cantik sampe di jenjang yang serius OKEII!!</p>
+        <p id="message7" class="hidden">Intinya gak ada yang bisa gantiin kamu dihidup aku okei</p>
+        <p id="message8" class="hidden">Sayangnya Aku ke kamu tdk terbatas canti</p>
+        <p id="message9" class="hidden">LOVE YOU SAYANGKU CINTAKU GEMESNYA AKU PACAR AKU YANG PALING CANTIK DIDUNIA💖</p>
+        <p id="message10" class="hidden">
+            <img id="extraImage" src="gambar_ke10.jpg" alt="Gambar Ke-10">
+        </p>
+        <button onclick="showNextMessage()">Klik aku!</button>
+    </div>
+
+    <div class="photo-left">
+        <div class="string"></div>
+        <img src="foto_kiri.jpg" alt="Foto Kiri">
+    </div>
+
+    <div class="photo-right">
+        <div class="string"></div>
+        <img src="foto_kanan.jpg" alt="Foto Kanan">
+    </div>
+
+    <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  </audio>
+
+    <canvas id="confetti"></canvas>
+
+    <script>
+        let current = 1;
+
+        function showNextMessage() {
+            const msg = document.getElementById('message' + current);
+            if (msg) msg.classList.remove('hidden');
+            if (current === 10) {
+                const img = document.getElementById('extraImage');
+                img.style.display = 'block';
+            }
+            current++;
+            if (current > 4) launchConfetti();
+        }
+
+        // Confetti
+        const canvas = document.getElementById("confetti");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const pieces = [];
+        for (let i = 0; i < 100; i++) {
+            pieces.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 10 + 5,
+                speedY: Math.random() * 3 + 1,
+                color: `hsl(${Math.random() * 360}, 100%, 70%)`
+            });
+        }
+
+        function drawConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            pieces.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                p.y += p.speedY;
+                if (p.y > canvas.height) p.y = -10;
+            });
+            requestAnimationFrame(drawConfetti);
+        }
+
+        function launchConfetti() {
+            drawConfetti();
+        }
+
+        // Love emoji melayang
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('love');
+            heart.innerText = '💗';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100%';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }, 500);
+    </script>
+
+</body>
+
+</html>
